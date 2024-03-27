@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iStar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+    .nav-item {
+      flex: 1;
+      text-align: center;
+    }
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: center;
+      border: none;
+      outline: none;
+      transition: 0.4s;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+    }
+    .product {
+      text-align: center;
+      margin: 20px;
+    }
+    .product img {
+      max-width: 100%;
+    }
+    .diagrams-section {
+      margin: 20px;
+      text-align: center;
+    }
+    .diagrams-section h2 {
+      text-align: center;
+    }
+    .diagram {
+      margin: 20px auto;
+      max-width: 100%;
+    }
+    .model-section {
+      margin: 20px;
+    }
+    .model-section h2 {
+      text-align: center;
+    }
+    .model-input {
+      margin-bottom: 10px;
+    }
+    .model-input label {
+      display: inline-block;
+      width: 150px;
+    }
+    .model-input select, .model-input input {
+      width: 200px;
+    }
+    .model-output {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+    .review-section {
+      margin: 20px;
+    }
+    .review-section h2 {
+      text-align: center;
+    }
+    .review-input {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .review-output {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+    .diagram-container {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>iStar</h1>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-item">
+        <button class="accordion">About Us</button>
+        <div class="panel">
+          <p>Market Department Manager: Kyle Novak, Stella Rose</p>
+          <p>Product Department Manager: Brianne Han</p>
+          <p>After-sales Department Manager: Site Xiang</p>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="accordion">Our Phones</button>
+        <div class="panel">
+          <p>iStar H1 pro</p>
+          <p>iStar H1 pro plus</p>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="accordion">Our Machine Learning Models</button>
+        <div class="panel">
+          <p>Mobile Phone Price Prediction Model</p>
+          <p>Language Sentiment Analysis Model</p>
+          <p>Text Topic Modeling Model</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="product">
+    <img src="https://i.ibb.co/kJvxzTn/1.png" alt="Product 1">
+  </div>
+  <div class="product">
+    <img src="https://i.ibb.co/Msr4Fwg/3.png" alt="Product 2">
+  </div>
+  <div class="product">
+    <img src="https://i.ibb.co/VqrWBGm/2.png" alt="Product 3">
+  </div>
+  <div class="product">
+    <img src="https://i.ibb.co/YXPsMjB/4.png" alt="Product 4">
+  </div>
+  <div class="product">
+    <img src="https://i.ibb.co/qrv8YqB/5.png" alt="Product 5">
+  </div>
+  <div class="product">
+    <img src="https://i.ibb.co/NFb9TvD/6.png" alt="Product 6">
+  </div>
+  <div class="product">
+    <img src="https://i.ibb.co/YQBDFC0/7.png" alt="Product 7">
+  </div>
+
+  <div class="diagrams-section">
+    <button class="accordion">Diagrams of PriceModel</button>
+    <div class="diagram-container">
+      <img class="diagram" src="https://i.ibb.co/FzxdfL4/1.png" alt="Diagram 1">
+      <img class="diagram" src="https://i.ibb.co/DrtgYs9/2.png" alt="Diagram 2">
+      <img class="diagram" src="https://i.ibb.co/qrZ85Dk/3.png" alt="Diagram 3">
+      <!-- 添加更多图表 -->
+    </div>
+  </div>
+
+  <div class="model-section">
+    <h2>Price Prediction Model</h2>
+    <div class="model-input">
+      <label for="brand">Brand Name:</label>
+      <select id="brand">
+        <option value="Apple">Apple</option>
+        <option value="Google">Google</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Xiaomi">Xiaomi</option>
+      </select>
+    </div>
+    <div class="model-input">
+      <label for="chipset">Chipset:</label>
+      <select id="chipset">
+        <option value="Apple A17 Pro">Apple A17 Pro</option>
+        <option value="Apple A16 Bionic">Apple A16 Bionic</option>
+        <option value="Apple A15 Bionic">Apple A15 Bionic</option>
+        <option value="Apple A14 Bionic">Apple A14 Bionic</option>
+        <option value="Apple A13 Bionic">Apple A13 Bionic</option>
+        <option value="Snapdragon 4 Gen 2">Snapdragon 4 Gen 2</option>
+        <option value="Snapdragon 4 Gen 1">Snapdragon 4 Gen 1</option>
+        <option value="MT6769H Helio G88">MT6769H Helio G88</option>
+        <option value="Snapdragon 7+ Gen 2">Snapdragon 7+ Gen 2</option>
+        <option value="Snapdragon 870 5G">Snapdragon 870 5G</option>
+        <!-- 添加更多选项 -->
+      </select>
+    </div>
+    <div class="model-input">
+      <label for="display">Display:</label>
+      <select id="display">
+        <option value="6.7">6.7″</option>
+        <option value="6.1">6.1″</option>
+        <option value="4.7">4.7″</option>
+        <option value="5.4">5.4″</option>
+        <option value="6.5">6.5″</option>
+        <option value="5.8">5.8″</option>
+        <option value="6.2">6.2″</option>
+        <option value="1.2">1.2″</option>
+        <option value="7.6">7.6″</option>
+        <option value="10.95">10.95″</option>
+        <!-- 添加更多选项 -->
+      </select>
+    </div>
+    <div class="model-input">
+      <label for="battery">Battery:</label>
+      <select id="battery">
+        <option value="4441">4441</option>
+        <option value="3274">3274</option>
+        <option value="4383">4383</option>
+        <option value="3349">3349</option>
+        <option value="4323">4323</option>
+        <option value="3200">3200</option>
+        <option value="3279">3279</option>
+        <option value="2018">2018</option>
+        <option value="4352">4352</option>
+        <option value="3095">3095</option>
+      </select>
+    </div>
+    <div class="model-input">
+      <label for="storage">Storage (GB):</label>
+      <select id="storage">
+        <option value="1024">1024GB</option>
+        <option value="512">512GB</option>
+        <option value="256">256GB</option>
+        <option value="128">128GB</option>
+        <!-- 添加更多选项 -->
+      </select>
+    </div>
+    <div class="model-input">
+      <label for="ram">RAM (GB):</label>
+      <select id="ram">
+        <option value="8">8</option>
+        <option value="6">6</option>
+        <option value="4">4</option>
+        <!-- 添加更多选项 -->
+      </select>
+    </div>
+    <div class="model-input">
+      <label for="camera">Camera Max MP:</label>
+      <select id="camera">
+        <option value="48">48</option>
+        <option value="12">12</option>
+        <option value="50">50</option>
+        <!-- 添加更多选项 -->
+      </select>
+    </div>
+    <div class="model-output">
+      <p>Predicted Price: $<span id="predicted-price">0</span></p>
+    </div>
+  </div>
+
+  <div class="diagrams-section">
+    <button class="accordion">Diagrams of the Sentiment Model</button>
+    <div class="diagram-container">
+      <img class="diagram" src="https://i.ibb.co/gr5Xwpk/1.png" alt="Diagram 6">
+      <img class="diagram" src="https://i.ibb.co/PgVMPGb/m3.png" alt="Diagram 7">
+      <!-- 添加更多图表 -->
+    </div>
+  </div>
+
+  <div class="review-section">
+    <h2>Sentiment and Topic Prediction</h2>
+    <textarea id="review-input" class="review-input" placeholder="Enter your reviews here, one per line..."></textarea>
+    <button onclick="predictReview()">Predict</button>
+    <div class="review-output">
+      <div id="review-results"></div>
+    </div>
+  </div>
+
+  <div class="diagrams-section">
+    <button class="accordion">Result of the Sentiment Model</button>
+    <div class="diagram-container">
+      <img class="diagram" src="https://i.ibb.co/qBNQzg9/m1.png" alt="Diagram 4">
+      <img class="diagram" src="https://i.ibb.co/ydRqvc6/1.png" alt="Diagram 5">
+      <img class="diagram" src="https://i.ibb.co/CbwTq49/1.png" alt="Diagram 8">
+      <img class="diagram" src="https://i.ibb.co/4pjjtfc/2.png" alt="Diagram 9">
+      <!-- 添加更多图表 -->
+    </div>
+  </div>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+
+    function predictPrice() {
+      var brand = document.getElementById("brand").value;
+      var chipset = document.getElementById("chipset").value;
+      var display = parseFloat(document.getElementById("display").value);
+      var battery = parseInt(document.getElementById("battery").value);
+      var storage = parseInt(document.getElementById("storage").value);
+      var ram = parseInt(document.getElementById("ram").value);
+      var camera = parseInt(document.getElementById("camera").value);
+    
+      var data = {
+        "Brand Name": brand,
+        "Chipset": chipset,
+        "Display": display,
+        "Battery": battery,
+        "Storage (GB)": storage,
+        "RAM (GB)": ram,
+        "Camera Max MP": camera
+      };
+    
+      fetch('http://localhost:5000/predict', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("predicted-price").textContent = data.predicted_price.toFixed(2);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+    
+    // 为每个选择框添加事件监听器
+    document.getElementById("brand").addEventListener("change", predictPrice);
+    document.getElementById("chipset").addEventListener("change", predictPrice);
+    document.getElementById("display").addEventListener("change", predictPrice);
+    document.getElementById("battery").addEventListener("change", predictPrice);
+    document.getElementById("storage").addEventListener("change", predictPrice);
+    document.getElementById("ram").addEventListener("change", predictPrice);
+    document.getElementById("camera").addEventListener("change", predictPrice);
+
+    function predictReview() {
+        var review = document.getElementById("review-input").value;
+      
+        var data = {
+          "review": review
+        };
+      
+        fetch('http://localhost:5000/predict_review', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+          var reviews = review.split('\n');
+          var resultHtml = '';
+      
+          for (var i = 0; i < reviews.length; i++) {
+            resultHtml += `
+              <p>
+                <strong>Review:</strong> ${reviews[i]}<br>
+                <strong>Predicted Sentiment:</strong> ${data.predicted_sentiments[i]}<br>
+                <strong>Predicted Topic:</strong> ${data.predicted_topics[i]}
+              </p>
+              <hr>
+            `;
+          }
+      
+          document.getElementById("review-results").innerHTML = resultHtml;
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
+  </script>
+</body>
+</html>
